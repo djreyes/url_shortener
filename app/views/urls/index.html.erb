@@ -1,7 +1,22 @@
-<h1>Urls#index</h1>
+<h1>Urls</h1>
 <p>Find me in app/views/urls/index.html.erb</p>
 
+<form action='/urls' method='post'>
+	<input type='text' name='link'>
+	<input type='submit' value='Shorten'>
+</form>
+
+<table>
+	<thead>
+		<td>ID</td>
+		<td>Original</td>
+		<td>Shortened</td>
+	</thead>
 <% @urls.each do |url| %>
-	<%= url.inspect %>
+	<tr>
+		<td><%= url.id %></td>
+		<td><%= url.link %></td>
+		<td><%= link_to "#{url.short}", edit_url_path(url.id) %></td>
+	</tr>
 <% end %>
-	 
+</table>
