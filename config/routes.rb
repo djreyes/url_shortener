@@ -1,7 +1,8 @@
 UrlShortener::Application.routes.draw do
 
   resources :urls
-  match "/:short" => redirect("/urls/%{short}")
+  # match "/:short" => redirect("/urls/%{short}")
+  match "/:id" => "urls#redirect"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -11,12 +11,14 @@
 		<td>ID</td>
 		<td>Original</td>
 		<td>Shortened</td>
+		<td>Link for Shortened</td>
 	</thead>
 <% @urls.each do |url| %>
 	<tr>
 		<td><%= url.id %></td>
 		<td><%= url.link %></td>
 		<td><%= link_to "#{url.short}", edit_url_path(url.id) %></td>
+		<td><%= link_to "localhost:3000/#{url.short}", url.link %></td>
 	</tr>
 <% end %>
 </table>
