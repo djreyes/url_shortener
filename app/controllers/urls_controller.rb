@@ -12,6 +12,7 @@ class UrlsController < ApplicationController
   end
 
   def edit
+    @url = Url.find(params[:id])
   end
 
   def show
