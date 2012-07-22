@@ -16,8 +16,8 @@
 <% @urls.each do |url| %>
 	<tr>
 		<td><%= url.id %></td>
-		<td><%= url.link %></td>
-		<td><%= link_to "#{url.short}", edit_url_path(url.id) %></td>
+		<td><%= link_to "#{url.link}", edit_url_path(url.id) %></td>
+		<td><%= link_to "Edit", edit_url_path(url.id) %></td>
 		<td><%= link_to "localhost:3000/#{url.short}", url.link %></td>
 	</tr>
 <% end %>

@@ -1,10 +1,14 @@
 class Url < ActiveRecord::Base
-  attr_accessible :link, :short
+  attr_accessible :link, :short, :count
   
   before_create :shorten
   
   def self.find(input)
     input.to_i == 0 ? find_by_short(input) : super
+  end
+  
+  def visit
+    self.count == nil ? self.count = 1 : self.count += 1
   end
   
   private
