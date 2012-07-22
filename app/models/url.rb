@@ -7,8 +7,8 @@ class Url < ActiveRecord::Base
     input.to_i == 0 ? find_by_short(input) : super
   end
   
-  def visit
-    self.count == nil ? self.count = 1 : self.count += 1
+  def increment_counter
+    self.count += 1
   end
   
   private

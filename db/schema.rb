@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(:version => 20120721004935) do
   create_table "urls", :force => true do |t|
     t.string   "link"
     t.string   "short"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "count"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "count",      :default => 0, :null => false
   end
 
 end

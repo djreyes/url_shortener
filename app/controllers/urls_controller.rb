@@ -19,7 +19,7 @@ class UrlsController < ApplicationController
 
   def show
     @url = Url.find(params[:id])
-    @url.visit
+    @url.increment_counter
     @url.save
     redirect_to @url.link
   end
