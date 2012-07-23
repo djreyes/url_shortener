@@ -1,2 +1,10 @@
-<h1>Urls#edit</h1>
-<p>Find me in app/views/urls/edit.html.erb</p>
+<!-- <form action='/urls/:id/' method='' class='well form-inline'>
+	<label class='control-label' for='link'>Original URL</label>
+	<input type='text' class='input-xlarge' name='link' placeholder='#{@url.link}'>
+	<label class='control-label' for='link'>Custom Shortcode</label>
+	<input type='text' class='input-medium' name='short' placeholder='Optional'>
+	<input type='submit' value='Shorten' class='btn btn-primary'>
+</form> -->
+
+<%= @url.link %>
+<%= @url.short %>

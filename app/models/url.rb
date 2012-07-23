@@ -1,5 +1,6 @@
 class Url < ActiveRecord::Base
   attr_accessible :link, :short, :count
+  validates :link, :presence => true
   
   before_save :shorten
   

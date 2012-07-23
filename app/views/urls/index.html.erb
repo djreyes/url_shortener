@@ -1,17 +1,22 @@
-<form action='/urls' method='post'>
-	Original URL:<input type='text' name='link'>
-	Short<input type='text' name='short'>
-	<input type='submit' value='Shorten'>
+<form action='/urls' method='post' class='well form-inline'>
+	<label class='control-label' for='link'>Original URL</label>
+	<input type='text' class='input-xlarge' name='link' placeholder='Original URL Required'>
+	<label class='control-label' for='link'>Custom Shortcode</label>
+	<input type='text' class='input-medium' name='short' placeholder='Optional'>
+	<input type='submit' value='Shorten' class='btn btn-primary'>
 </form>
 
-<table>
+<table class='table table-striped'>
 	<thead>
-		<td>ID</td>
-		<td>Original</td>
-		<td>Shortened</td>
-		<td>Link for Shortened</td>
-		<td>Visit Count</td>
+		<tr>
+			<th>ID</th>
+			<th>Original</th>
+			<th>Shortened</th>
+			<th>Link for Shortened</th>
+			<th>Visited Count</th>
+		</tr>
 	</thead>
+	<tbody>
 <% @urls.each do |url| %>
 	<tr>
 		<td><%= url.id %></td>
@@ -21,4 +26,5 @@
 		<td><%= url.count %></td>
 	</tr>
 <% end %>
+	</tbody>
 </table>
