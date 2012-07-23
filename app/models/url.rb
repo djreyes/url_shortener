@@ -1,7 +1,7 @@
 class Url < ActiveRecord::Base
   attr_accessible :link, :short, :count
   
-  before_create :shorten
+  before_save :shorten
   
   def self.find(input)
     input.to_i == 0 ? find_by_short(input) : super
@@ -18,6 +18,6 @@ class Url < ActiveRecord::Base
   end
   
   def shorten
-    self.short = ('a'..'z').to_a.shuffle[0..5].join
+    self.short = ('a'..'z').to_a.shuffle[0..5].join unless attribute_present?(:short)
   end
 end
