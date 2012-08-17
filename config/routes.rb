@@ -3,8 +3,8 @@ UrlShortener::Application.routes.draw do
 
   resources :urls
   
-  # match "/:id" => "urls#redirect"
   match "/:id" => "urls#show"
+  # match "/:id" => "urls#redirect"
   # match "/:short" => redirect("/urls/%{short}")
   
   

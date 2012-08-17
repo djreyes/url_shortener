@@ -9,9 +9,9 @@ class UrlsController < ApplicationController
   def create
     @url = Url.new :link => params[:link], :short => params[:short]
     if @url.save
-      flash[:message] = "URL saved!"
+      flash[:success] = "URL saved!"
     else
-      flash[:error] = "Original URL link is required."
+      flash[:error] = "Original URL link is required and custom shortcode must be unique."
     end
     redirect_to urls_path
   end
@@ -31,8 +31,4 @@ class UrlsController < ApplicationController
     redirect_to @url.link
   end
   
-  def redirect
-    @url = Url.find(params[:id])
-    redirect_to @url.link
-  end
 end

@@ -6,6 +6,7 @@
 	<input type='submit' value='Shorten' class='btn btn-primary'>
 </form>
 
+<% if !@urls.empty? %>
 <table class='table table-striped'>
 	<thead>
 		<tr>
@@ -17,7 +18,7 @@
 		</tr>
 	</thead>
 	<tbody>
-<% @urls.each do |url| %>
+	<% @urls.each do |url| %>
 	<tr>
 		<td><%= url.id %></td>
 		<td><%= link_to "#{url.link}", edit_url_path(url.id) %></td>
@@ -25,6 +26,7 @@
 		<td><%= link_to "#{request.host}:#{request.port.to_s}/#{url.short}", url_path(url.id) %></td>
 		<td><%= url.count %></td>
 	</tr>
-<% end %>
+	<% end %>
 	</tbody>
 </table>
+<% end %>
